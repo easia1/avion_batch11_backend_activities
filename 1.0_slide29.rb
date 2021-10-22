@@ -10,7 +10,7 @@ puts "#1 Does the array #{arr} include the number #{number}?" , arr.include?(num
 puts "#2 Give me a number between 0 and 100"
 
 while number = gets.chomp.to_i
-    if number >= 0 && number <= 100
+    if number > 0 && number < 100
         if number >= 0 && number <= 50
             puts "#{number} is between 0 and 50"
             break
