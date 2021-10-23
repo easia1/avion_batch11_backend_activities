@@ -28,3 +28,6 @@ juan.about
 puts juan.name
 puts juan.age
 puts juan.city
+
+
+
