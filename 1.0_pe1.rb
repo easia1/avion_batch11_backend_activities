@@ -10,3 +10,4 @@ for num in 1...1000
 end
 
 puts "The sum of all the multiples of 3 or 5 below 1000 is: #{sum}."
+
