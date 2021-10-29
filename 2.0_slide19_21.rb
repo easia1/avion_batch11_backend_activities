@@ -1,66 +1,68 @@
-# class Student
-#     def initialize(name, studno, major, units, discount=false)
-#         @name = name
-#         @studno = studno
-#         @major = major
-#         @units = units
-#         @discount = discount
-#     end
+# ------------ Encapsulation (slide 19) and Abstraction (slide 21) ----------- #
 
-#     def show_info()
-#         puts "Student Name: #{@name}"
-#         puts "Student Number: #{@studno}"
-#         puts "Major: #{@major}"
-#     end
+class Student
+    def initialize(name, studno, major, units, discount=false)
+        @name = name
+        @studno = studno
+        @major = major
+        @units = units
+        @discount = discount
+    end
 
-#     def shift_to(newmajor)
-#         puts "#{@name} shifted from #{@major} to #{newmajor}"
-#         @major = newmajor
-#     end
+    def show_info()
+        puts "Student Name: #{@name}"
+        puts "Student Number: #{@studno}"
+        puts "Major: #{@major}"
+    end
 
-#     def total_tuition
-#         puts (total_amount * tuition_discount).round
-#     end
+    def shift_to(newmajor)
+        puts "#{@name} shifted from #{@major} to #{newmajor}"
+        @major = newmajor
+    end
 
-#     def total_amount
-#         @units * 1500
-#     end
+    def total_tuition
+        puts (total_amount * tuition_discount).round
+    end
 
-#     def tuition_discount
-#         @discount ? 0.7 : 1
-#     end
+    def total_amount
+        @units * 1500
+    end
 
-#     def introduce
-#         puts "Hi! I'm #{@name}, and I'm currently studying #{@major}."
-#     end
-# end
+    def tuition_discount
+        @discount ? 0.7 : 1
+    end
 
-# class Undergrad < Student
-#     def introduce
-#         puts "Hi! I'm #{@name}, and I'm taking up a bachelor's degree in #{@major}."
-#     end
-# end
+    def introduce
+        puts "Hi! I'm #{@name}, and I'm currently studying #{@major}."
+    end
+end
 
-# class Master < Student
-#     def introduce
-#         puts "Hello! I'm #{@name}, and I'm taking up a master's degree in #{@major}."
-#     end
-# end
+class Undergrad < Student
+    def introduce
+        puts "Hi! I'm #{@name}, and I'm taking up a bachelor's degree in #{@major}."
+    end
+end
 
-
-# eman = Undergrad.new("Edric Emmanuel Sia", 201407076, "Economics", 17, true)
-# juan = Master.new("Juan de la Cruz", 201412345, "Philippine Studies", 9)
+class Master < Student
+    def introduce
+        puts "Hello! I'm #{@name}, and I'm taking up a master's degree in #{@major}."
+    end
+end
 
 
-# eman.show_info()
-# juan.show_info()
+eman = Undergrad.new("Edric Emmanuel Sia", 201407076, "Economics", 17, true)
+juan = Master.new("Juan de la Cruz", 201412345, "Philippine Studies", 9)
 
-# eman.shift_to("Landscape Architecture")
-# eman.total_tuition()
-# juan.total_tuition()
 
-# eman.introduce()
-# juan.introduce()
+eman.show_info()
+juan.show_info()
+
+eman.shift_to("Landscape Architecture")
+eman.total_tuition()
+juan.total_tuition()
+
+eman.introduce()
+juan.introduce()
 
 
 
