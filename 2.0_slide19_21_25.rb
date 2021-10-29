@@ -1,4 +1,4 @@
-# ------------ Encapsulation (slide 19) and Abstraction (slide 21) ----------- #
+# -------------- Encapsulation (slide 19), Abstraction (slide 21) and Inheritance (slide 23/25) -------------- #
 
 class Student
     def initialize(name, studno, major, units, discount=false)
