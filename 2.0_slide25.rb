@@ -13,35 +13,36 @@ class Plant
     end
 
     def info
-        puts "I'm a generic plant."
+        puts "I'm a generic plant." + "\n\n"
     end
 end
 
 class Araceae < Plant
 
     def family
-        puts "Plant family: Araceae"
+        puts "Plant family: Araceae" + "\n\n"
     end
 
     def info
         puts "I'm a plant from the Araceae family."
-        puts @genus && @species ? "My scientific name is /#{@genus} #{@species}/." : ''
+        puts @genus && @species ? "My scientific name is /#{@genus} #{@species}/." + "\n\n": ''
     end
 
 end
 
 class Asparagaceae < Plant
     def family
-        puts "Plant family: Asparagaceae"
+        puts "Plant family: Asparagaceae" + "\n\n"
     end
 
     def info
         puts "I'm a plant from the Araceae family."
-        puts @genus && @species ? "My scientific name is /#{@genus} #{@species}/." : ''
+        puts @genus && @species ? "My scientific name is /#{@genus} #{@species}/." + "\n\n": ''
     end
 end
 
 # Duck-typing
+puts '# ----------- Duck-typing ----------- #'
 new_plant = Plant.new
 araceae = Araceae.new
 new_plant.family(araceae)
@@ -51,6 +52,7 @@ new_plant.family(asparagaceae)
 
 
 # Inheritance
+puts '# ----------- Inheritance ----------- #'
 tiPlant = Asparagaceae.new("Cordyline", "fruticosa")
 tiPlant.info
 tiPlant.family
