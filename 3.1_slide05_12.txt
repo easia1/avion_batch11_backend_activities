@@ -1,0 +1,132 @@
+
+CREATE TABLE lessons (
+    id integer PRIMARY KEY,
+    name character varying(255) NOT NULL,
+    description text,
+    front_end boolean DEFAULT false,
+    back_end boolean DEFAULT false,
+    price numeric(8, 2) DEFAULT 0.0,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+INSERT INTO lessons (id, name, description, price, created_at, updated_at, back_end)
+VALUES (1, 'Ruby', 'Ruby is an interpreted, high-level, general-purpose programming language.', 199.99, current_timestamp, current_timestamp, true), 
+(2, 'Python', 'Python is an interpreted, high-level, general-purpose programming language like Ruby.', 190, current_timestamp, current_timestamp, true);
+
+INSERT INTO lessons (id, name, description, price, created_at, updated_at, back_end)
+VALUES (3, 'Javascript', 'Javascript is a programming language that conforms to the ECMAScript specification.', 50, current_timestamp, current_timestamp, true),
+(4, 'Rust', 'Rust is a statically-typed programming language designed for performance and safety, especially safe concurrency and memory management.', 70, current_timestamp, current_timestamp, true),
+(5, 'Golang', 'Golang is an open source programming language that makes it easy to build simple, reliable, and efficient software.', 90, current_timestamp, current_timestamp, true);
+
+
+
+CREATE TABLE instructors (
+    id integer PRIMARY KEY,
+    first_name character varying(150) NOT NULL,
+    last_name character varying(150) NOT NULL,
+    lesson_id numeric,
+    created_at timestamp without time zone NOT NULL,
+    updated_at timestamp without time zone NOT NULL
+);
+
+INSERT INTO instructors (id, first_name, last_name, lesson_id, created_at, updated_at)
+VALUES (1, 'Adrian', 'Co', 1, current_timestamp, current_timestamp),
+(2, 'Analyn', 'Cajocson', 1, ,current_timestamp, current_timestamp),
+(3, 'Pau', 'Riosa', 3, current_timestamp, current_timestamp),
+(4, 'Maurus', 'Vitor', 3, current_timestamp, current_timestamp),
+(5, 'John', 'Young', 6, current_timestamp, current_timestamp);
+
+
+/* Inner join */
+SELECT l.name, i.first_name, i.last_name FROM lessons l INNER JOIN instructors i ON i.lesson_id = l.id;
+
+/* Left join */
+SELECT l.name, i.first_name, i.last_name FROM lessons l LEFT JOIN instructors i ON i.lesson_id = l.id;
+
+/* Right join */
+SELECT l.name, i.first_name, i.last_name FROM lessons l RIGHT JOIN instructors i ON i.lesson_id = l.id;
+
+/* Full join */
+SELECT l.name, i.first_name, i.last_name FROM lessons l FULL JOIN instructors i ON i.lesson_id = l.id;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+CREATE TABLE students2 (
+    id integer PRIMARY KEY,
+    first_name character varying(150) NOT NULL,
+    middle_name character varying(150),
+    last_name character varying(150) NOT NULL,
+    age int,
+    location text
+);
+
+INSERT INTO students2 (id, first_name, last_name, age, location)
+VALUES (1, 'Juan', 'Cruz', 18, 'Manila'),
+(2, 'Anne', 'Wall', 20, 'Manila'),
+(3, 'Theresa', 'Joseph', 21, 'Manila'),
+(4, 'Isaac', 'Gray', 19, 'Laguna'),
+(5, 'Zack', 'Matthews', 22, 'Marikina'),
+(6, 'Finn', 'Lam', 25, 'Manila');
+
+
+CREATE TABLE classrooms (
+    id integer PRIMARY KEY,
+    student_id numeric,
+    section character
+);
+
+INSERT INTO classrooms (id, student_id, section)
+VALUES (1, 1, 'A'),
+(2, 2, 'A'),
+(3, 3, 'B'),
+(4, 4, 'C'),
+(5, 5, 'B'),
+(6, 6, 'A'),
+(7, 7, 'C'),
+(8, 8, 'B'),
+(9, 9, 'B'),
+(10, 10, 'C');
+
+
+/* Inner join */
+SELECT i.section, l.first_name, l.last_name FROM students2 l INNER JOIN classrooms i ON i.student_id = l.id;
+
+/* Left join */
+SELECT i.section, l.first_name, l.last_name FROM students2 l LEFT JOIN classrooms i ON i.student_id = l.id;
+
+/* Right join */
+SELECT i.section, l.first_name, l.last_name FROM students2 l RIGHT JOIN classrooms i ON i.student_id = l.id;
+
+/* Full join */
+SELECT i.section, l.first_name, l.last_name FROM students2 l FULL JOIN classrooms i ON i.student_id = l.id;
