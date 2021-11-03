@@ -1,12 +1,11 @@
 
 def is_isogram(word)
-    @word = word.downcase
     isIsogram = true
     i = 0
-    while i < @word.length do
+    while i < word.length do
         j = i + 1
-        while j < @word.length do
-            if @word[j] == @word[i]
+        while j < word.length do
+            if word[j].downcase == word[i].downcase
                 isIsogram = false
                 break
             end
@@ -17,8 +16,8 @@ def is_isogram(word)
     puts isIsogram
 end
 
-is_isogram("Dermatoglyphics")
-is_isogram("aba")
-is_isogram("moOse")
-is_isogram("eman")
-is_isogram("annyeonghaseyo")
+is_isogram("Dermatoglyphics") #true
+is_isogram("aba") #false
+is_isogram("moOse") #false
+is_isogram("eman") #true
+is_isogram("annyeonghaseyo") #false
