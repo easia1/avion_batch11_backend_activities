@@ -99,6 +99,11 @@ VALUES (1, 'Juan', 'Cruz', 18, 'Manila'),
 (5, 'Zack', 'Matthews', 22, 'Marikina'),
 (6, 'Finn', 'Lam', 25, 'Manila');
 
+INSERT INTO students2 (id, first_name, last_name, age, location)
+VALUES (7, 'Edric Emmanuel', 'Sia', 24, 'Makati'),
+(8, 'Yasmin', 'Asistido', 20, 'Manila'),
+(9, 'Maria', 'del Barrio', 21, 'Barrio'),
+(10, 'Albert', 'Einstein', 50, 'Laguna');
 
 CREATE TABLE classrooms (
     id integer PRIMARY KEY,
